@@ -1,5 +1,4 @@
 #include <ros/ros.h>
-#include <std_msgs/String.h>
 
 int main(int argc, char **argv){
 	ros::init(argc, argv, "helloworld_node");
@@ -7,9 +6,7 @@ int main(int argc, char **argv){
 	ros::Rate loop_rate(10); // Hz
 
 	while(ros::ok()){
-		std_msgs::String msg;
-		msg.data = "hello, world !";
-		ROS_INFO("message: %s", msg.data.c_str());
+		ROS_INFO("hello, world !");
 
 		ros::spinOnce();
 		loop_rate.sleep();
