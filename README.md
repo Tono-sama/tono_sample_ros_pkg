@@ -1,14 +1,14 @@
 # tono_sample_ros_pkg
 ROSの基本的な機能の確認
 
-# ROSの導入
+1. ROSの導入
 
-# hello, world
+2. hello, world
 
-# topic通信
+3. topic通信
 
-# launchファイル
+4. launchファイル
 
-# rviz
+5. rviz
 
-# gazebo
+6. gazebo
