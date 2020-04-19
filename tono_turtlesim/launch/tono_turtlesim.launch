@@ -1,0 +1,10 @@
+<launch>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find tono_turtlesim)/launch/tono_turtlesim.rviz"/>
+
+  <node name="turtlesim_node" pkg="turtlesim" type="turtlesim_node" />
+
+  <node name="turtlesim_state_node" pkg="tono_turtlesim" type="turtle_state_node" />
+  <node name="turtlesim_controller_node" pkg="tono_turtlesim" type="turtle_controller2_node" />
+
+</launch>
