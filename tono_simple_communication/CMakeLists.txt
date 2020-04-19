@@ -23,10 +23,14 @@ include_directories(
 
 add_executable(simple_talker_node src/simple_talker.cpp)
 add_executable(simple_listener_node src/simple_listener.cpp)
+add_executable(turtle_controller_node src/turtle_controller.cpp)
 
 target_link_libraries(simple_talker_node
   ${catkin_LIBRARIES}
 )
 target_link_libraries(simple_listener_node
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(turtle_controller_node
   ${catkin_LIBRARIES}
 )

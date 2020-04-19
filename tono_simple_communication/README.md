@@ -12,3 +12,10 @@ topic通信をしよう！
 - 実行コマンド:  
 `rosrun tono_simple_communication simple_listener_node`
 - 端末にhelloworldが表示されることを確認できればok!
+
+## turtle_controller_node
+- turtlesimで遊ぶノード
+- 実行コマンド:  
+`rosrun turtlesim turtlesim_node`  
+`rosrun tono_simple_communication turtle_controller_node`
+- 亀が円を描いて移動すればok!
