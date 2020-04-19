@@ -1,0 +1,39 @@
+<launch>
+
+  <!-- <arg name="robot_urdf" default="$(find tono_gazebo)/urdf/tono_robot.urdf"/> -->
+  <arg name="robot_urdf" default="$(find tono_gazebo)/urdf/tono_vlp16_robot.xacro"/>
+  <arg name="use_sim_time" default="true"/>
+
+  <param name="robot_description" command="$(find xacro)/xacro.py $(arg robot_urdf) --inorder"/>
+  
+  <!-- gazebo -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find tono_gazebo)/world/obj.world" />
+    <arg name="debug" value="false" />
+    <arg name="gui" value="true" />
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="headless" value="false"/>
+  </include>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find tono_gazebo)/config/diff_drive_controller.yaml" command="load"/>
+
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="log"
+    args="-urdf -model tono_robot -param robot_description"/>
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" ns="tono_robot" output="log" 
+    args="joint_state_controller diff_drive_controller"/>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="log" ns="/tono_robot" />
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"
+    output="log" ns="/tono_robot" />
+
+  <!-- rviz -->
+  <node name="rviz" pkg="rviz" type="rviz" required="true" args="-d $(find tono_gazebo)/launch/tono_gazebo.rviz"/>
+
+</launch>
