@@ -13,7 +13,7 @@ topic通信をしよう！
 `rosrun tono_simple_communication simple_listener_node`
 - 端末にhelloworldが表示されることを確認できればok!
 
-## turtle_controller_node
+## turtle_controller_node(おまけ)
 - turtlesimで遊ぶノード
 - 実行コマンド:  
 `rosrun turtlesim turtlesim_node`  
