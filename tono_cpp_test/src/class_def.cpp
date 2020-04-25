@@ -11,4 +11,7 @@ CPP_TEST_CLASS::CPP_TEST_CLASS(ros::NodeHandle n){
 
 void CPP_TEST_CLASS::_loop(const ros::TimerEvent&){
 	_pub.publish(_msg);
+	#ifdef TOMO_DEBUG
+	ROS_INFO("[CPP_TEST_CLASS] _msg = %s", _msg.data.c_str());
+	#endif
 }
