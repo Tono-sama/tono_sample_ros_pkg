@@ -2,6 +2,8 @@
 ROSの基本的な機能の確認
 
 1. ROSの導入
+- 実行コマンド:  
+`bash ros_melodic_install.sh`
 
 2. hello, world  
 tono_helloworld
