@@ -13,7 +13,7 @@ int main(int argc, char **argv){
 	cmd_vel_msg.angular.z = 0.5;
 
 	while(ros::ok()){
-		ROS_INFO("cmd_vel_msg publish: (x=%lf, omega=%lf)", cmd_vel_msg.linear.x, cmd_vel_msg.angular.z = 0.5);
+		ROS_INFO("cmd_vel_msg publish: (x=%lf, omega=%lf)", cmd_vel_msg.linear.x, cmd_vel_msg.angular.z);
 		cmd_vel_pub.publish(cmd_vel_msg);
 
 		ros::spinOnce();
