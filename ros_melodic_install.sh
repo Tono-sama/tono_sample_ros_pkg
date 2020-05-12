@@ -11,6 +11,8 @@ echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 source /opt/ros/melodic/setup.bash
 
+sudo apt install python-rosdep
+
 sudo rosdep init
 rosdep update
 
