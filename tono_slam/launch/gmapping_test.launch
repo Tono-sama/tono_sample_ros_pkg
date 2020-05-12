@@ -1,0 +1,17 @@
+<launch>
+
+  <arg name="robot_urdf" default="$(find tono_slam)/urdf/tonorobo_horizontal_vlp.urdf" />
+  <param name="robot_description" textfile="$(arg robot_urdf)" />
+
+<!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+
+  <param name="use_sim_time" value="true" />
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find tono_slam)/launch/gmapping_test.rviz" required="true"/>
+
+  <node name="slam_gmapping" pkg="gmapping" type="slam_gmapping" output="screen" />
+
+</launch>
