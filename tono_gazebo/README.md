@@ -2,7 +2,7 @@
 gazeboで遊ぼう!
 
 ## (多分)依存パッケージ
-- インストールコマンド(ワイルドカード使ってるので雑):  
+- インストールコマンド(ワイルドカード使ってるのでちょっと雑だけど...):  
 `sudo apt-get install ros-melodic-gazebo*`  
 `sudo apt-get install ros-melodic-velodyne*`  
 
