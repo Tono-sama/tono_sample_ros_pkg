@@ -15,5 +15,5 @@ tono_simple_communication
 
 5. launchファイル
 
-6. gazebo
+6. gazebo  
 tono_gazebo
