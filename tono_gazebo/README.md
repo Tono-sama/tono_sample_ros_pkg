@@ -1,6 +1,11 @@
 # tono_gazebo
 gazeboで遊ぼう!
 
+## (多分)依存パッケージ
+- インストールコマンド(ワイルドカード使ってるので雑):  
+`sudo apt-get install ros-melodic-gazebo*`  
+`sudo apt-get install ros-melodic-velodyne*`  
+
 ## tono_gazebo.launch
 - 実行コマンド:  
 `roslaunch tono_gazebo tono_gazebo.launch`
