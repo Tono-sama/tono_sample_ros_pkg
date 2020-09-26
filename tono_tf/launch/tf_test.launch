@@ -1,0 +1,8 @@
+<launch>
+
+    <node name="tf_test_node" pkg="tono_tf" type="tf_test_node" output="screen" />
+
+    <!-- rviz -->
+    <node name="rviz" pkg="rviz" type="rviz" required="true" args="-d $(find tono_tf)/launch/tf_publisher_1.rviz"/>
+
+</launch>

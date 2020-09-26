@@ -1,0 +1,32 @@
+<launch>
+
+    <node name="tf_publisher_node1" pkg="tono_tf" type="tf_publisher_node" output="screen">
+      <param name="x" value="1.0" />
+      <param name="y" value="0.0" />
+      <param name="z" value="0.0" />
+      <param name="roll" value="0.0" />
+      <param name="pitch" value="0.0" />
+      <param name="yaw" value="1.0" />
+      <param name="base_frame" value="frame_1" />
+      <param name="child_frame" value="frame_2" />
+      <param name="tf_topic_name" value="tf" />
+      <!-- <param name="tf_topic_name" value="tf_static" /> -->
+    </node>
+
+    <node name="tf_publisher_node2" pkg="tono_tf" type="tf_publisher_node" output="screen">
+      <param name="x" value="2.0" />
+      <param name="y" value="0.0" />
+      <param name="z" value="0.0" />
+      <param name="roll" value="0.0" />
+      <param name="pitch" value="0.0" />
+      <param name="yaw" value="1.0" />
+      <param name="base_frame" value="frame_2" />
+      <param name="child_frame" value="frame_3" />
+      <param name="tf_topic_name" value="tf" />
+      <!-- <param name="tf_topic_name" value="tf_static" /> -->
+    </node>
+
+    <!-- rviz -->
+    <node name="rviz" pkg="rviz" type="rviz" required="true" args="-d $(find tono_tf)/launch/tf_publisher_1.rviz"/>
+
+</launch>
