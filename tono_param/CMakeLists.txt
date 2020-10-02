@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 2.8.3)
-project(tono_turtlesim)
+cmake_minimum_required(VERSION 3.0.2)
+project(tono_param)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -7,7 +7,6 @@ project(tono_turtlesim)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
-  tf
 )
 
 catkin_package(
@@ -22,12 +21,8 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-add_executable(turtle_controller2_node src/turtle_controller2.cpp)
-add_executable(turtle_state_node src/turtle_state.cpp)
+add_executable(turtle_controller3_node src/turtle_controller3.cpp)
 
-target_link_libraries(turtle_controller2_node
-  ${catkin_LIBRARIES}
-)
-target_link_libraries(turtle_state_node
+target_link_libraries(turtle_controller3_node
   ${catkin_LIBRARIES}
 )

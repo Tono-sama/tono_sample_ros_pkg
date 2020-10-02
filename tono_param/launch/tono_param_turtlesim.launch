@@ -1,0 +1,10 @@
+<launch>
+
+  <!-- load yaml -->
+	<rosparam file="$(find tono_param)/config/cmd_vel_param.yaml" command="load"/>
+
+  <node name="turtlesim_node" pkg="turtlesim" type="turtlesim_node" />
+
+  <node name="turtlesim_controller_node" pkg="tono_param" type="turtle_controller3_node" />
+
+</launch>
