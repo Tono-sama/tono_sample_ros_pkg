@@ -1,0 +1,7 @@
+<launch>
+
+	<!-- 0. 基本的なlaunchファイルの記述 -->
+	<node name="simple_talker_node0" pkg="tono_simple_communication" type="simple_talker_node" />
+	<node name="simple_listener_node0" pkg="tono_simple_communication" type="simple_listener_node" output="screen" />
+
+</launch>

@@ -1,0 +1,38 @@
+<launch>
+
+	<arg name="use_node2" default="true" />
+	<arg name="topic_name" default="topic_name2" />
+
+  <!-- 1. 他のlaunchファイルの実行 -->
+  <include file="$(find tono_launch)/launch/tono_launch001.launch" />
+
+	<!-- 2. topic名のremap(置き換え、publisherとsubscriberの両方に適応可能) -->
+  <node name="simple_talker_node1" pkg="tono_simple_communication" type="simple_talker_node" >
+    <remap from="/topic_name" to="/topic_name1"/>
+  </node>
+  <node name="simple_listener_node1" pkg="tono_simple_communication" type="simple_listener_node" >
+    <remap from="/topic_name" to="/topic_name1"/>
+  </node>
+
+  <!-- 3. arg, group (ifはtrueのとき実行 unlessはfalseのとき実行 evalを使うと文字列比較も可能) -->
+  <group if="$(arg use_node2)" >
+    <node name="simple_talker_node2" pkg="tono_simple_communication" type="simple_talker_node" >
+      <remap from="/topic_name" to="$(arg topic_name)"/>
+    </node>
+    <node name="simple_listener_node2" pkg="tono_simple_communication" type="simple_listener_node" >
+      <remap from="/topic_name" to="$(arg topic_name)"/>
+    </node>
+  </group>
+  <group unless="$(arg use_node2)" >
+    <node name="simple_talker_node3" pkg="tono_simple_communication" type="simple_talker_node" >
+      <remap from="/topic_name" to="$(arg topic_name)"/>
+    </node>
+    <node name="simple_listener_node3" pkg="tono_simple_communication" type="simple_listener_node" >
+      <remap from="/topic_name" to="$(arg topic_name)"/>
+    </node>
+  </group>
+
+  <!-- 4. required (このノードがkillされると他のノード全体がkillされる) -->
+	<node name="rqt_graph" pkg="rqt_graph" type="rqt_graph" required="true" />
+
+</launch>

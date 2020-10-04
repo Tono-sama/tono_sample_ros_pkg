@@ -1,0 +1,9 @@
+<launch>
+
+  <!-- 5. argを指定して他のlaunchファイルを実行 -->
+  <include file="$(find tono_launch)/launch/tono_launch002.launch" >
+    <arg name="use_node2" value="false" />
+    <arg name="topic_name" value="tono_topic" />
+  </include>
+
+</launch>
