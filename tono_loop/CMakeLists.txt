@@ -16,7 +16,11 @@ include_directories(
 )
 
 add_executable(ros_shutdown_node src/ros_shutdown.cpp)
+add_executable(ros_timer_node src/ros_timer.cpp)
 
 target_link_libraries(ros_shutdown_node
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(ros_timer_node
   ${catkin_LIBRARIES}
 )
