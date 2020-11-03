@@ -2,7 +2,7 @@
 ROSの基本的な機能の確認
 
 1. ROSの導入
-- 実行コマンド:  
+- ROS環境構築コマンド:  
 `source ros_melodic_install.sh`
 
 2. hello, world  
