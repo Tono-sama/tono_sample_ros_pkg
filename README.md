@@ -21,21 +21,32 @@ tono_helloworld
 3. topic通信  
 tono_simple_communication
 
-4. rviz
+4. loopの使い方  
+tono_loop
 
-5. launchファイル  
+5. マルチスレッド処理  
+tono_callback_spin
+
+6. launchファイル  
 tono_launch
 
-6. gazebo  
+7. rviz  
+tono_turtlesim
+
+8. gazebo  
 tono_gazebo
 
-7. rosparam  
+9. rosparam  
 tono_param
 
-8. TF  
+10. TF  
 tono_tf
 
+11. cppでROSっぽく書く書き方みたいな  
+tono_cpp_test
+
 ## 追加メモ
+- 拡張子でROSの機能を知る
 - launch
   - 端末での実行時にarg指定
 - TF
